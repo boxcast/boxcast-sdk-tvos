@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document>
+    <productBundleTemplate>
+        <background>
+        </background>
+        <banner>
+            <stack>
+                <title>${broadcast.name.encodeHTML()}</title>
+                <row>
+                  <text>${dateFormatted(broadcast)}</text>
+                  <text>${durationFormatted(broadcast)}</text>
+                  <text>${broadcast.transcoder_profile}</text>
+                </row>
+                <description allowsZooming="true" moreLabel="more">${broadcast.description.encodeHTML()}</description>
+                <row id="buttons">
+                    <buttonLockup id="watch">
+                        <badge src="https://assets.boxcast.com/apps/tvos/tv.png" height="50" width="50" />
+                        <title>Watch</title>
+                    </buttonLockup>
+                </row>
+            </stack>
+            <heroImg src="${broadcast.preview.encodeHTML()}" />
+        </banner>
+    </productBundleTemplate>
+</document>

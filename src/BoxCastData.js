@@ -12,7 +12,7 @@ const DEFAULT_APIBASEURL = 'https://api.boxcast.com/';
 
 export default class BoxCastData {
 
-  constructor(options) {
+  constructor(options = {}) {
     this._apibaseurl = options.APIBASEURL || DEFAULT_APIBASEURL;
   }
 

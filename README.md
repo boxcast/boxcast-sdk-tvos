@@ -54,4 +54,4 @@ api.getBroadcastView(broadcast.id).then((view) => {
 
 ## Changelog
 
-* v1.0: Initial version
+* v1.0.0: Initial version
