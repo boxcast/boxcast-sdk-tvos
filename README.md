@@ -2,7 +2,9 @@
 
 # boxcast-sdk-tvos
 
-The BoxCast SDK for tvOS/TVML video playback allows you to develop your own tvOS TVML applications to watch content from your [BoxCast](https://www.boxcast.com) account.
+The [BoxCast](https://www.boxcast.com) SDK for tvOS/TVML video playback allows you to develop your own tvOS TVML applications to watch content from your BoxCast account.
+
+The SDK provides a set of [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)-based methods for querying data from your account and a method of attaching to a native [tvOS Player](https://developer.apple.com/reference/tvmljs/player) in order to provide viewer analytics back to your BoxCast account.
 
 ## Installation
 
