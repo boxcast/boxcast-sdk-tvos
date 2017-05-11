@@ -1,15 +1,15 @@
 # boxcast-sdk-tvos
-BoxCast SDK for tvOS/TVML video playback
+The BoxCast SDK for tvOS/TVML video playback allows you to develop your own tvOS TVML applications to watch content from your (BoxCast)[https://www.boxcast.com] account.
 
 ## Installation
 
 ```
-npm install boxcast-sdk-tvos
+npm install boxcast-sdk-tvos --save
 ```
 
 ## Usage
 
-Import module and initialize constants
+Import the module and initialize constants
 ```
 import { BoxCastData, BoxCastPlayerMetrics } from 'boxcast-sdk-tvos';
 
@@ -36,7 +36,7 @@ api.getArchivedBroadcasts(YOUR_CHANNEL_ID).then((broadcasts) => {
 });
 ```
 
-When ready to play a broadcast...
+When ready to watch a broadcast, grab the "view" that will contain a playlist for live or on-demand content.  Note: the `view.playlist` will not exist for future content or for broadcasts that were missed.
 ```
 api.getBroadcastView(broadcast.id).then((view) => {
     var player = new Player(),
@@ -52,11 +52,15 @@ api.getBroadcastView(broadcast.id).then((view) => {
 });
 ```
 
-The SDK also exposes vendor libraries (Bluebird Promise polyfill, fetch polyfill) for your use as needed
+The SDK also exposes vendor libraries (Bluebird Promise polyfill, fetch polyfill) for your use as needed.
 ```
 import { vendor } from 'boxcast-sdk-tvos';
 const { Promise, fetch } = vendor;
 ```
+
+## Known Limitations
+
+* This SDK is for viewing and querying of broadcasts on accounts that do not protect their content with geoblocking, passwords, pay-per-view ticketing, host restrictions or other authentication means.  The BoxCast API will reject requests for such content, so you should be prepared to handle errors using the `.catch((err) => { ... })` method of the data promises.
 
 ## Changelog
 
