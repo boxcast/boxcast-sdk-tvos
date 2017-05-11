@@ -65,7 +65,7 @@ const { Promise, fetch } = vendor;
 
 ## Known Limitations
 
-* This SDK is for viewing and querying of broadcasts on accounts that do not protect their content with geoblocking, passwords, pay-per-view ticketing, host restrictions or other authentication means.  The BoxCast API will reject requests for such content, so you should be prepared to handle errors using the `.catch((err) => { ... })` method of the data promises.
+* This SDK is for viewing and querying of broadcasts on accounts that do not protect their content with pay-per-view ticketing, host restrictions, geoblocking, passwords, or other authentication means.  The BoxCast API will reject requests for such content, so you should be prepared to handle errors using the `.catch((err) => { ... })` method of the data promises.
 
 ## Changelog
 
