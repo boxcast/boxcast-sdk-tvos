@@ -52,6 +52,12 @@ api.getBroadcastView(broadcast.id).then((view) => {
 });
 ```
 
+The SDK also exposes vendor libraries (Bluebird Promise polyfill, fetch polyfill) for your use as needed
+```
+import { vendor } from 'boxcast-sdk-tvos';
+const { Promise, fetch } = vendor;
+```
+
 ## Changelog
 
 * v1.0.0: Initial version

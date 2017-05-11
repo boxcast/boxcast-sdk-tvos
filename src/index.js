@@ -4,9 +4,16 @@
 
  Copyright (c) 2017 BoxCast. All rights reserved.
 */
-require('./polyfill');
+import './polyfill';
+
+import Promise from 'bluebird';
+import fetch from './fetch';
 
 module.exports = {
 	BoxCastData: require('./BoxCastData'),
 	BoxCastPlayerMetrics: require('./BoxCastPlayerMetrics'),
+	vendor: {
+		Promise,
+		fetch
+	}
 };
