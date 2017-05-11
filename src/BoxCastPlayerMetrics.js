@@ -21,6 +21,7 @@ export default class BoxCastPlayerMetrics {
     this._currentPosition = 0;
     this._duration = 0;
     this._lastPlayTime = null;
+    this._fetch = fetch;
   }
 
   attach(player) {
@@ -140,7 +141,7 @@ export default class BoxCastPlayerMetrics {
     Object.getOwnPropertyNames(data).forEach((p) => {
       postData[p] = data[p];
     });
-    return fetch(`${this._baseUrl}player/interaction`, {
+    return this._fetch(`${this._baseUrl}player/interaction`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',

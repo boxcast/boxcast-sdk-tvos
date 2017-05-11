@@ -14,13 +14,14 @@ export default class BoxCastData {
 
   constructor(options = {}) {
     this._apibaseurl = options.APIBASEURL || DEFAULT_APIBASEURL;
+    this._fetch = fetch;
   }
 
   findBroadcasts(channelId, query) {
     // Need to clean up the text querystring into something that would
     // make sense for the user based on the API's query DSL.
     query = textToQuery(query);
-    return fetch(`${this._options.APIBASEURL}channels/${channelId}/broadcasts?q=${encodeURIComponent(query)}&s=-starts_at&l=100&p=0`)
+    return this._fetch(`${this._apibaseurl}channels/${channelId}/broadcasts?q=${encodeURIComponent(query)}&s=-starts_at&l=100&p=0`)
               .then(parseJSON)
               .then((bs) => bs.map(fixBroadcast));
   }
@@ -34,13 +35,13 @@ export default class BoxCastData {
   }
 
   getBroadcast(broadcastId) {
-    return fetch(`${this._apibaseurl}broadcasts/${broadcastId}`)
+    return this._fetch(`${this._apibaseurl}broadcasts/${broadcastId}`)
             .then(parseJSON)
             .then(fixBroadcast);
   }
 
   getBroadcastView(broadcastId) {
-    return fetch(`${this._options.APIBASEURL}broadcasts/${broadcastId}/view`).then(parseJSON);
+    return this._fetch(`${this._apibaseurl}broadcasts/${broadcastId}/view`).then(parseJSON);
   }
 }
 
