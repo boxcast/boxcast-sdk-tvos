@@ -1,6 +1,7 @@
+# boxcast-sdk-tvos
 <a href="https://www.boxcast.com" target="_blank"><img src="https://www.boxcast.com/hs-fs/hub/484866/file-2483746126-png/Logos/NewBoxCastLogo.png?t=1494524438771" height="25"></a>&nbsp;<a href="https://developer.apple.com/go/?id=apple-tv-markup-language-reference" target="_blank"><img src="https://developer.apple.com/library/content/Resources/1260/Images/apple_developer_header_2x.png" height="25"></a>
 
-# boxcast-sdk-tvos
+[![Build Status](https://travis-ci.org/boxcast/boxcast-sdk-tvos.svg?branch=master)](https://travis-ci.org/boxcast/boxcast-sdk-tvos)
 
 The [BoxCast](https://www.boxcast.com) SDK for tvOS/TVML video playback allows you to develop your own tvOS TVML applications to watch content from your BoxCast account.
 
