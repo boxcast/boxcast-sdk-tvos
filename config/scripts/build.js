@@ -3,7 +3,6 @@ const merge = require('webpack-merge')
 const webpack = require('webpack')
 const pkg = require('../../package.json')
 const ora = require('ora')
-const CompressionPlugin = require('compression-webpack-plugin')
 
 const spinner = ora()
 
@@ -15,25 +14,7 @@ const webpackConfig = merge.smart({}, base, {
       }
     }),
     new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        screw_ie8: true,
-        warnings: false,
-      },
-      mangle: {
-        screw_ie8: true,
-      },
-      output: {
-        comments: false,
-        screw_ie8: true,
-      },
       sourceMap: true
-    }),
-    new CompressionPlugin({
-      asset: '[path].gz[query]',
-      algorithm: 'gzip',
-      test: /\.js$/,
-      threshold: 10240,
-      minRatio: 0.8
     })
   ]
 })

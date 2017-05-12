@@ -1,7 +1,7 @@
 {
   "name": "boxcast-sdk-tvos",
   "author": "Mike Griffith <mike.griffith@boxcast.com>",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "BoxCast SDK for tvOS/TVML video playback",
   "bugs": {
     "url": "https://github.com/boxcast/boxcast-sdk-tvos/issues"
@@ -22,7 +22,6 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "bluebird": "^3.5.0",
-    "compression-webpack-plugin": "^0.4.0",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "jest": "^20.0.0",
     "ora": "^1.2.0",
