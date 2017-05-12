@@ -17,7 +17,7 @@ npm install boxcast-sdk-tvos --save
 
 Import the module and initialize constants
 ```
-import { BoxCastData, BoxCastPlayerMetrics } from 'boxcast-sdk-tvos';
+import { BoxCastData, BoxCastPlayer } from 'boxcast-sdk-tvos';
 
 const YOUR_CHANNEL_ID = ' TODO: fill in from dashboard ';
 const YOUR_APP_NAME = ' TODO: unique identifier used for analytics ';
@@ -42,20 +42,13 @@ api.getArchivedBroadcasts(YOUR_CHANNEL_ID).then((broadcasts) => {
 });
 ```
 
-When ready to watch a broadcast, grab the "view" that will contain a playlist for live or on-demand content.  Note: the `view.playlist` will not exist for future content or for broadcasts that were missed.
+When ready to watch a broadcast, simply initialize a player for the broadcast and call the `present`
+method, which will request the playlist from the BoxCast API and present a native tvOS player if available.
 ```
-api.getBroadcastView(broadcast.id).then((view) => {
-    var player = new Player(),
-        playlist = new Playlist(),
-        mediaItem = new MediaItem("video", view.playlist);
-    player.playlist = playlist;
-    player.playlist.push(mediaItem);
-
-    var metrics = new BoxCastPlayerMetrics(broadcast, view, {HOSTNAME: YOUR_APP_NAME});
-    metrics.attach(player);
-
-    player.present();
-});
+var player = new BoxCastPlayer(broadcast, {HOSTNAME: YOUR_APP_NAME});
+player.present()
+    .then((tvOSPlayerInstance) => { ... })
+    .catch((errorMessage) => { ... });
 ```
 
 The SDK also exposes vendor libraries (Bluebird Promise polyfill, fetch polyfill) for your use as needed.
@@ -71,3 +64,4 @@ const { Promise, fetch } = vendor;
 ## Changelog
 
 * v1.0.0: Initial version
+* v1.1.0: Add shortcut for initializing Player for broadcast with metrics service already attached

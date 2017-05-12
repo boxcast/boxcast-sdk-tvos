@@ -11,6 +11,7 @@ import fetch from './fetch';
 
 module.exports = {
 	BoxCastData: require('./BoxCastData'),
+	BoxCastPlayer: require('./BoxCastPlayer'),
 	BoxCastPlayerMetrics: require('./BoxCastPlayerMetrics'),
 	vendor: {
 		Promise,
