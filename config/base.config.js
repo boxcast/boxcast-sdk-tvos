@@ -8,7 +8,9 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: `${pkg.name}.js`,
-    libraryTarget: 'umd'
+    library: 'BoxCastSDKtvOS',
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
   resolve: {
     extensions: ['.js']

@@ -18,7 +18,7 @@ npm install boxcast-sdk-tvos --save
 
 Import the module and initialize constants.
 ```javascript
-import { BoxCastData, BoxCastPlayer } from 'boxcast-sdk-tvos';
+const { BoxCastData, BoxCastPlayer } = require('boxcast-sdk-tvos');
 
 const YOUR_CHANNEL_ID = ' TODO: fill in from dashboard ';
 const YOUR_APP_NAME = ' TODO: unique identifier used for analytics ';
