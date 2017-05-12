@@ -1,7 +1,7 @@
 {
   "name": "boxcast-sdk-tvos",
   "author": "Mike Griffith <mike.griffith@boxcast.com>",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "BoxCast SDK for tvOS/TVML video playback",
   "bugs": {
     "url": "https://github.com/boxcast/boxcast-sdk-tvos/issues"
