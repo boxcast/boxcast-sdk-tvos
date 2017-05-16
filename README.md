@@ -54,7 +54,7 @@ player.present()
 
 The SDK also exposes vendor libraries (Bluebird Promise polyfill, fetch polyfill) for your use as needed.
 ```javascript
-import { vendor } from 'boxcast-sdk-tvos';
+const { vendor } = require('boxcast-sdk-tvos');
 const { Promise, fetch } = vendor;
 ```
 
@@ -66,3 +66,4 @@ const { Promise, fetch } = vendor;
 
 * v1.0.0: Initial version
 * v1.1.0: Add shortcut for initializing Player for broadcast with metrics service already attached
+* v1.1.3: Fix build so modules can be imported properly into TVML runtime
