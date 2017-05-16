@@ -17,21 +17,22 @@ export default class BoxCastData {
     this._fetch = fetch;
   }
 
-  findBroadcasts(channelId, query) {
-    // Need to clean up the text querystring into something that would
-    // make sense for the user based on the API's query DSL.
-    query = textToQuery(query);
-    return this._fetch(`${this._apibaseurl}channels/${channelId}/broadcasts?q=${encodeURIComponent(query)}&s=-starts_at&l=100&p=0`)
-              .then(parseJSON)
-              .then((bs) => bs.map(fixBroadcast));
+  findBroadcasts(channelId, query, fixUserInput = true) {
+    if (fixUserInput) {
+      // Need to clean up the text querystring into something that would
+      // make sense for the user based on the API's query DSL.
+      query = textToQuery(query);
+    }
+    const url = `${this._apibaseurl}channels/${channelId}/broadcasts?q=${encodeURIComponent(query)}&s=-starts_at&l=100&p=0`;
+    return fetch(url).then(parseJSON).then((bs) => bs.map(fixBroadcast));
   }
 
   getLiveBroadcasts(channelId) {
-    return this.findBroadcasts(channelId, 'timeframe:current');
+    return this.findBroadcasts(channelId, 'timeframe:current', false);
   }
 
   getArchivedBroadcasts(channelId) {
-    return this.findBroadcasts(channelId, 'timeframe:past');
+    return this.findBroadcasts(channelId, 'timeframe:past', false);
   }
 
   getBroadcast(broadcastId) {
