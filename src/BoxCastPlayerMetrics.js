@@ -119,8 +119,10 @@ export default class BoxCastPlayerMetrics {
     if (this._lastPlayTime) {
       duration += (Date.now() / 1000.0) - this._lastPlayTime;
     }
+    var s = this._broadcastView.status;
+    var isLive = s.indexOf('live')>=0 || s.indexOf('stalled')>=0 || s.indexOf('prepared')>=0;
     var mergedData = {
-      is_live: this._broadcastView.status === "live",
+      is_live: isLive,
       account_id: this._broadcast.account_id,
       broadcast_id: this._broadcast.id,
       channel_id: this._broadcast.channel_id,
