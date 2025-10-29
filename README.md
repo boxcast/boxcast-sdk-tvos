@@ -4,7 +4,7 @@
 
 # boxcast-sdk-tvos
 
-** This repository is no longer being maintained or supported. Please use at your own risk. **
+**This repository is no longer being maintained or supported. Please use at your own risk.**
 
 The [BoxCast](https://www.boxcast.com) SDK for tvOS/TVML video playback allows you to develop your own tvOS TVML applications to watch content from your BoxCast account.
 
